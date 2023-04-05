@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Solutions {
 
-    public static List<Integer> primeNumbers(int num) {
+    public static String primeNumbers(int num) {
         List<Integer> primeNum = new ArrayList<>();
 
         boolean[] isPrime = new boolean[num + 1];
@@ -22,24 +22,23 @@ public class Solutions {
             }
         }
 
-        return primeNum;
+        return primeNum.toString();
     }
 
-    public static Object measureMethodExecutionTime(String methodName, Object... args) throws Exception {
-        long startTime = System.nanoTime();
+
+    public static Object measureMethodExecutionTime(String methodName, int num) throws Exception {
+
+        long startTime = System.currentTimeMillis();
 
         // Используйте рефлексию, чтобы найти и вызвать метод с переданным именем
-        Method method = Main.class.getDeclaredMethod(methodName, getParameterTypes(args));
-        Object result = method.invoke(null, args);
+        Method method = Solutions.class.getMethod(methodName, int.class); // указываем тип аргумента
+        Object result = method.invoke(null, num); // передаем значение аргумента
 
-        long endTime = System.nanoTime();
+
+        long endTime = System.currentTimeMillis();
         long executionTime = endTime - startTime;
-        System.out.println("Время выполнения метода " + methodName + " : " + executionTime + " нс");
+        System.out.println("Время выполнения метода " + methodName + " : " + executionTime + " мс");
 
         return result;
-    }
-
-    private static Class<?>[] getParameterTypes(Object[] args) {
-        return Arrays.stream(args).map(Object::getClass).toArray(Class[]::new);
     }
 }
