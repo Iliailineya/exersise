@@ -61,4 +61,22 @@ public class Problem {
         System.out.println("K-oe порядковое в массиве A = " + Solutions.findKthStatistic(arrA, K));
 
     }
+
+    //    Задача на работу с графами:
+    //    Напишите программу, которая принимает на вход граф в виде списка смежности и выводит все
+    //    мосты в графе (т.е. ребра, удаление которых делает граф несвязным).
+    public static void four() {
+//        // Создаем случайный граф с 5 вершинами и 6 ребрами
+//        Graph graph = Graph.createRandomGraph(5, 6);;
+//        // вывести представление списка смежности Graph
+//        Graph.printGraph(graph);
+        List<Edge> edges = Arrays.asList(new Edge(0, 1), new Edge(1, 2),
+                new Edge(2, 0), new Edge(2, 1), new Edge(3, 2),
+                new Edge(4, 5), new Edge(5, 4));
+        Graph graph = new Graph(edges);
+        Graph.printGraph(graph);
+
+    }
+
+
 }
