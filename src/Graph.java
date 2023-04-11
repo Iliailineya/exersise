@@ -8,15 +8,20 @@ class Edge {
         this.src = src;
         this.dest = dest;
     }
+
+    @Override
+    public String toString() {
+        return "(" + src + ", " + dest + ")";
+    }
+
 }
 
-// Класс для представления graphического объекта
+// Класс для представления graph объекта
 class Graph {
-    // Список списков для представления списка смежности
-    List<List<Integer>> adjList = new ArrayList<>();
+    List<List<Integer>> adjList = new ArrayList<>(); // Список списков для представления списка смежности
 
-    // Конструктор для построения Graphа
-    public Graph(List<Edge> edges) {
+    // Конструктор для построения Graph
+    public Graph(List<Edge> edges, boolean orient) {
         // найти вершину с максимальным номером
         int n = 0;
         for (Edge e : edges) {
@@ -36,10 +41,30 @@ class Graph {
             // выделяем новый узел в списке смежности от src до dest
             adjList.get(current.src).add(current.dest);
 
-            // раскомментировать строку ниже для неориентированного Graph
+            if(!orient) {
+                // выделяем новый узел в списке смежности от места назначения до источника
+            adjList.get(current.dest).add(current.src);
+            }
+        }
+    }
+    public int getNumVertices() {
+        return adjList.size();
+    }
 
-            // выделяем новый узел в списке смежности от места назначения до источника
-//            adjList.get(current.dest).add(current.src);
+    public List<Integer> getAdjacentVertices(int u) {
+        return adjList.get(u);
+    }
+
+    // Обход графа в глубину
+    @SuppressWarnings("unused")
+    public void dfs(int v, boolean[] visited) {
+        visited[v] = true;
+        System.out.print(v + " ");
+
+        for (int u : adjList.get(v)) {
+            if (!visited[u]) {
+                dfs(u, visited);
+            }
         }
     }
 
@@ -54,6 +79,7 @@ class Graph {
         }
     }
 
+    @SuppressWarnings("unused")
     public static Graph createRandomGraph(int vertex, int edge) {
         Random random = new Random();
         Set<Edge> edgesSet = new HashSet<>();
@@ -66,7 +92,6 @@ class Graph {
             }
         }
         List<Edge> edges = new ArrayList<>(edgesSet);
-        return new Graph(edges);
+        return new Graph(edges, true);
     }
-
 }

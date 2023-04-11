@@ -23,23 +23,11 @@ public class Utility {
         }
         return argTypes;
     }
-//    @SuppressWarnings("unchecked")
-//    public static <T extends Number> T[] fillArray(int length, Class<T> type) {
-//        T[] arr = (T[]) Array.newInstance(type, length);
-//        Random random = new Random();
-//        for (int i = 0; i < arr.length; i++) {
-//            arr[i] = type.cast(random.nextInt(101));
-//        }
-//
-//        return arr;
-//    }
-
-    public static int[] fillArray(int[] arr) {
+    public static void fillArray(int[] arr) {
         Random random = new Random();
         for (int i = 0; i < arr.length; i++) {
             arr[i] = random.nextInt(101);
         }
-        return arr;
     }
 
 }

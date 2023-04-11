@@ -59,4 +59,50 @@ public class Solutions {
         System.out.println(Arrays.toString(arr));
         return arr[k - 1]; // возвращаем K-ый элемент массива (индексация массивов начинается с 0)
     }
+
+    public static class BridgeFinder {
+        private int time;
+
+        public List<Edge> findBridges(Graph graph) {
+            List<Edge> bridges = new ArrayList<>();
+            int n = graph.getNumVertices();
+            boolean[] visited = new boolean[n];
+            int[] disc = new int[n];
+            int[] low = new int[n];
+            int[] parent = new int[n];
+
+            // Инициализируем массивы
+            Arrays.fill(visited, false);
+            Arrays.fill(parent, -1);
+
+            // Запускаем поиск мостов из каждой непосещенной вершины
+            for (int i = 0; i < n; i++) {
+                if (!visited[i]) {
+                    dfs(i, visited, disc, low, parent, bridges, graph);
+                }
+            }
+
+            return bridges;
+        }
+
+        private void dfs(int u, boolean[] visited, int[] disc, int[] low, int[] parent, List<Edge> bridges, Graph graph) {
+            visited[u] = true;
+            disc[u] = low[u] = ++time;
+
+            for (int v : graph.getAdjacentVertices(u)) {
+                if (!visited[v]) {
+                    parent[v] = u;
+                    dfs(v, visited, disc, low, parent, bridges, graph);
+
+                    // Проверяем, является ли ребро (u, v) мостом
+                    low[u] = Math.min(low[u], low[v]);
+                    if (low[v] > disc[u]) {
+                        bridges.add(new Edge(u, v));
+                    }
+                } else if (v != parent[u]) {
+                    low[u] = Math.min(low[u], disc[v]);
+                }
+            }
+        }
+    }
 }
