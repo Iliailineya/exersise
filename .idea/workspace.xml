@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c88dfdaa-9b5a-4ddf-83f0-f961bcb8bfd0" name="Changes" comment="Graph createRandomGraph">
+    <list default="true" id="c88dfdaa-9b5a-4ddf-83f0-f961bcb8bfd0" name="Changes" comment="Graph findBridges">
+      <change afterPath="$PROJECT_DIR$/src/IProblem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Problem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Problem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solutions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solutions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utility.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -51,17 +51,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/Java/LessonsTasksFromAI&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/user/IdeaProjects/exercise",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
@@ -110,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681142796289</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Graph findBridges">
+      <created>1681217395383</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681217395383</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -118,7 +128,8 @@
     <MESSAGE value="Prime number and MethodExecutionTime (working)" />
     <MESSAGE value="findPalindrome, findKthStatistic and fillArray" />
     <MESSAGE value="Graph createRandomGraph" />
-    <option name="LAST_COMMIT_MESSAGE" value="Graph createRandomGraph" />
+    <MESSAGE value="Graph findBridges" />
+    <option name="LAST_COMMIT_MESSAGE" value="Graph findBridges" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -56,13 +56,13 @@ public class Problem {
         System.out.println(Arrays.toString(arrA));
 
         Random random = new Random();
-        int K = random.nextInt(size + 1);
+        int K = random.nextInt(1, size + 1);
         System.out.println("K=" + K);
         System.out.println("K-oe порядковое в массиве A = " + Solutions.findKthStatistic(arrA, K));
 
     }
 
-//        Задача на работу с графами:
+    //        Задача на работу с графами:
 //        Напишите программу, которая принимает на вход граф в виде списка смежности и выводит все
 //        мосты в графе (т.е. ребра, удаление которых делает граф несвязным).
     public static void four() {
